@@ -1,0 +1,18 @@
+var data = document.getElementById('canvas').toDataURL();
+var a = document.createElement('a');
+a.href = data;
+a.download = 'test.png';
+a.click();
+
+
+
+cls = function() {
+    setTimeout(() => { preview() }, 1000);
+    setTimeout(() => {
+        debugger;   // execution will pause here
+        const canvas = document.getElementById('canvas');
+        const dataURL = canvas.toDataURL();
+        localStorage.setItem('imageUrl', dataURL);
+        window.location.href = 'https://inviteguru.in/invitation-preview/'
+    }, 3000)
+}
